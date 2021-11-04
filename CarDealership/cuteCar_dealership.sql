@@ -44,52 +44,84 @@ CREATE TABLE IF NOT EXISTS `buyer` (
     PRIMARY KEY (buyerId)
 );
 
--- ------------------------------------------------
--- Create seller table
-DROP TABLE IF EXISTS `seller`;
-
-CREATE TABLE IF NOT EXISTS `seller`(
-    sellerId INT(10),
+CREATE TABLE IF NOT EXISTS `seller` (
+	sellerId INT NOT NULL,
     firstName VARCHAR(45) NOT NULL,
     lastName VARCHAR(45) NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    email VARCHAR(45) NOT NULL,
     paymentMethod VARCHAR(45) NOT NULL,
-
+    
     PRIMARY KEY (sellerId)
-
 );
 
+
 -- Load data using this: put your path to the files
-LOAD DATA Local INFILE "copy path to file"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/CarDealership/salespeople.csv"
 INTO TABLE salespeople 
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA Local INFILE "copy path to file"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/CarDealership/buyer.csv"
 INTO TABLE buyer 
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA Local INFILE "copy path to file"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/CarDealership/car.csv"
 INTO TABLE car 
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-LOAD DATA Local INFILE "copy path to file"
-INTO TABLE seller 
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/CarDealership/seller.csv"
+INTO TABLE seller
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
+UPDATE buyer 
+SET paymentMethod = 'HELLO'
+WHERE paymentMethod = 'check';
+
+
+-- UPDATE/ALTER/DELETE STATEMENTS
+
+UPDATE buyer SET paymentMethod = REPLACE(paymentMethod , 'check', 'CHECK');
+UPDATE seller SET paymentMethod = REPLACE(paymentMethod , 'check', 'CHECK');
+
+UPDATE buyer SET paymentMethod = REPLACE(paymentMethod , 'cash', 'CASH');
+UPDATE seller SET paymentMethod = REPLACE(paymentMethod , 'cash', 'CASH');
+
+UPDATE buyer SET paymentMethod = REPLACE(paymentMethod , '"credit card"', 'CC');
+UPDATE seller SET paymentMethod = REPLACE(paymentMethod , '"credit card"', 'CC');
+
+UPDATE car SET color = REPLACE(color, 'pink','PINK');
+UPDATE car SET color = REPLACE(color, 'purple', 'PURPLE');
+UPDATE car SET color = REPLACE(color, 'orange','ORANGE');
+UPDATE car SET color = REPLACe(color, 'red', 'RED');
+
+ALTER TABLE car RENAME COLUMN color TO carColor;
+ALTER TABLE car MODIFY COLUMN carColor varchar(25);
+
+ALTER TABLE car RENAME COLUMN vinNumber TO VIN;
+ALTER TABLE car MODIFY COLUMN VIN varchar(18);
+
+UPDATE seller SET email = 'cnutkin1d@outlook.com' WHERE (sellerID = 50);
+
+UPDATE seller SET paymentMethod = 'CHECK' WHERE (sellerID = 4);
+
+DELETE FROM buyer WHERE buyerID IN (SELECT buyerID FROM car WHERE sellerID = 41);
+DELETE FROM buyer WHERE buyerID IN (SELECT buyerID FROM car WHERE sellerID = 42);
+
+DELETE FROM car WHERE sellerID = 41;
+DELETE FROM car WHERE sellerID = 42;
+
+DELETE FROM seller WHERE sellerID = 41;
+DELETE FROM seller WHERE sellerID = 42;
+
 -- CHECK IF DATA IS IN TABLE
 select * from salespeople;
-select * from seller;
-select * from car;
 select * from buyer;
-
--- ----------------------------------------------------
--- WORK ON UPDATE/ALTER/DELETE/ ETC.. UNDER HERE
--- 
+select * from car;
+select * from seller;
