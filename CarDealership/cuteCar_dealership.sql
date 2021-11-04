@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS `salespeople`(
 
     PRIMARY KEY (salesPersonId)
 );
+<<<<<<< HEAD
 DROP TABLE IF EXISTS `car` ;
 CREATE TABLE IF NOT EXISTS `car` (
 	vinNumber VARCHAR(17) NOT NULL,
@@ -43,9 +44,8 @@ CREATE TABLE IF NOT EXISTS `buyer` (
     
     PRIMARY KEY (buyerId)
 );
-
 -- Load data using this: put your path to the files
-LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/CarDealership/salespeople.csv"
+LOAD DATA Local INFILE "copy path to file"
 INTO TABLE salespeople 
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -65,5 +65,33 @@ IGNORE 1 ROWS;
 
 -- CHECK IF DATA IS IN TABLE
 select * from salespeople;
+<<<<<<< HEAD
 select * from buyer;
 select * from car;
+=======
+
+-- ------------------------------------------------
+-- Create seller table
+DROP TABLE IF EXISTS `seller`;
+
+CREATE TABLE IF NOT EXISTS `seller`(
+    sellerId INT(10),
+    firstName VARCHAR(45) NOT NULL,
+    lastName VARCHAR(45) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    paymentMethod VARCHAR(45) NOT NULL,
+
+    PRIMARY KEY (sellerId)
+
+);
+
+-- Load data using this: put your path to the files
+LOAD DATA Local INFILE "copy path to file"
+INTO TABLE seller 
+FIELDS TERMINATED BY ',' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+-- CHECK IF DATA IS IN TABLE
+select * from seller;
+>>>>>>> b5c7ac41e40cb79008af003e5bd5c1067b9f36d5
