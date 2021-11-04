@@ -20,7 +20,6 @@ CREATE TABLE IF NOT EXISTS `salespeople`(
 
     PRIMARY KEY (salesPersonId)
 );
-<<<<<<< HEAD
 DROP TABLE IF EXISTS `car` ;
 CREATE TABLE IF NOT EXISTS `car` (
 	vinNumber VARCHAR(17) NOT NULL,
@@ -44,31 +43,6 @@ CREATE TABLE IF NOT EXISTS `buyer` (
     
     PRIMARY KEY (buyerId)
 );
--- Load data using this: put your path to the files
-LOAD DATA Local INFILE "copy path to file"
-INTO TABLE salespeople 
-FIELDS TERMINATED BY ',' 
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-
-LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/CarDealership/buyer.csv"
-INTO TABLE buyer 
-FIELDS TERMINATED BY ',' 
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-
-LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/CarDealership/car.csv"
-INTO TABLE car 
-FIELDS TERMINATED BY ',' 
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-
--- CHECK IF DATA IS IN TABLE
-select * from salespeople;
-<<<<<<< HEAD
-select * from buyer;
-select * from car;
-=======
 
 -- ------------------------------------------------
 -- Create seller table
@@ -87,11 +61,35 @@ CREATE TABLE IF NOT EXISTS `seller`(
 
 -- Load data using this: put your path to the files
 LOAD DATA Local INFILE "copy path to file"
+INTO TABLE salespeople 
+FIELDS TERMINATED BY ',' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+LOAD DATA Local INFILE "copy path to file"
+INTO TABLE buyer 
+FIELDS TERMINATED BY ',' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+LOAD DATA Local INFILE "copy path to file"
+INTO TABLE car 
+FIELDS TERMINATED BY ',' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+LOAD DATA Local INFILE "copy path to file"
 INTO TABLE seller 
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 -- CHECK IF DATA IS IN TABLE
+select * from salespeople;
 select * from seller;
->>>>>>> b5c7ac41e40cb79008af003e5bd5c1067b9f36d5
+select * from car;
+select * from buyer;
+
+-- ----------------------------------------------------
+-- WORK ON UPDATE/ALTER/DELETE/ ETC.. UNDER HERE
+-- 
