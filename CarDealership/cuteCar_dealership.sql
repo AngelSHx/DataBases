@@ -24,8 +24,9 @@ DROP TABLE IF EXISTS `car` ;
 CREATE TABLE IF NOT EXISTS `car` (
 	vinNumber VARCHAR(17) NOT NULL,
     color VARCHAR(45) NOT NULL,
-    buyDate DATE NOT NULL,
-    sellDate DATE NOT NULL,
+    buyDate DATE,
+    buyPrice DECIMAL NOT NULL,
+    sellDate DATE,
     sellPrice DECIMAL NOT NULL,
     salesPersonId INT NOT NULL,
     sellerID INT NOT NULL,
@@ -99,7 +100,7 @@ UPDATE seller SET paymentMethod = REPLACE(paymentMethod , '"credit card"', 'CC')
 UPDATE car SET color = REPLACE(color, 'pink','PINK');
 UPDATE car SET color = REPLACE(color, 'purple', 'PURPLE');
 UPDATE car SET color = REPLACE(color, 'orange','ORANGE');
-UPDATE car SET color = REPLACe(color, 'red', 'RED');
+UPDATE car SET color = REPLACE(color, 'red', 'RED');
 
 ALTER TABLE car RENAME COLUMN color TO carColor;
 ALTER TABLE car MODIFY COLUMN carColor varchar(25);
