@@ -153,8 +153,8 @@ ORDER BY
 --firstName and lastName. 
 select  
     CONCAT(sp.firstName, " ", sp.lastName) as 'Name', 
-    SUM(c.sellPrice) as 'Revenue',
-    COUNT(c.sellPrice) * 250 as 'Commision'
+    CONCAT('$', SUM(c.sellPrice)) as 'Revenue',
+    CONCAT('$', COUNT(c.sellPrice) * 250) as 'Commision'
 from 
     salespeople sp 
 INNER join 
