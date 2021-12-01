@@ -70,3 +70,60 @@ CREATE TABLE IF NOT EXISTS `Properties_Table`(
     -- FOREIGN KEY(PropertyTypeID) REFERENCES `Property_Type_Table` (PropertyTypeID),
     -- FOREIGN KEY(NeighborhoodID) REFERENCES Neighborhoods_Table (NeighborhoodID)
 );
+
+DROP TABLE IF EXISTS `PropertyReviews_Table`;
+
+CREATE TABLE IF NOT EXISTS `PropertyReviews_Table`(
+    PropertyReviewsID INT(100) NOT NULL,
+    PropertyID INT(100) NOT NULL,
+    UserID INT NOT NULL,
+    Comments VARCHAR(25) NOT NULL,
+    ReviewDate Date NOT NULL,
+    
+    PRIMARY KEY (PropertyReviewsID),
+    
+	CONSTRAINT `fk_PropertyReviews_PropertyID`
+    FOREIGN KEY (`PropertyID`)
+    REFERENCES `properties_table` (`PropertyID`)
+);
+
+-- --------------------------------------------------------------------------------------------------------
+-- CREATE AMENITIES TABLE
+
+DROP TABLE IF EXISTS `Amenities_Table`;
+
+CREATE TABLE IF NOT EXISTS `Amenities_Table`(
+    AmenitiesID INT(100) NOT NULL,
+    PropertyID INT(100) NOT NULL,
+    PetFriendly BOOL NOT NULL,
+    WiFi BOOL NOT NULL,
+    TV BOOL NOT NULL,
+    AirConditioning BOOL NOT NULL,
+    Pool BOOL NOT NULL,
+    FeeFarking BOOL NOT NULL,
+    
+    PRIMARY KEY (`AmenitiesID`),
+    
+    CONSTRAINT `fk_Amenities_PropertyID`
+    FOREIGN KEY (`PropertyID`)
+    REFERENCES `properties_table` (`PropertyID`)
+    );
+    
+    -- --------------------------------------------------------------------------------------------------------
+-- CREATE BOOKINGS TABLE
+
+DROP TABLE IF EXISTS `Bookings_Table`;
+
+CREATE TABLE IF NOT EXISTS `Bookings_Table`(
+    BookingID INT(100) NOT NULL,
+    BookingStartDate Date NOT NULL,
+    BookingEndDate Date NOT NULL,
+    ListingID INT(100) NOT NULL,
+    TravelerID Date NOT NULL,
+    
+    PRIMARY KEY (BookingID),
+    
+    Constraint `fk_Bookings_TravelerID`
+    FOREIGN KEY (`TravelerID`)
+    REFERENCES `Travelers_Table` (`TravelerID`)
+);
