@@ -70,6 +70,8 @@ CREATE TABLE IF NOT EXISTS `Properties_Table`(
     -- FOREIGN KEY(PropertyTypeID) REFERENCES `Property_Type_Table` (PropertyTypeID),
     -- FOREIGN KEY(NeighborhoodID) REFERENCES Neighborhoods_Table (NeighborhoodID)
 );
+-- --------------------------------------------------------------------------------------------------------
+-- CREATE PROPERTY REVIEWS TABLE
 
 DROP TABLE IF EXISTS `PropertyReviews_Table`;
 
