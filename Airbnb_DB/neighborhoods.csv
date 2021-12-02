@@ -1,79 +1,79 @@
-NeighborhoodName,NeighborhoodID
-Washington Virginia Vale,1
-Highland,2
-Five Points,3
-North Park Hill,4
-North Capitol Hill,5
-Baker,6
-West Highland,7
-Overland,8
-South Park Hill,9
-CBD,10
-Washington Park,11
-Union Station,12
-Washington Park West,13
-City Park West,14
-Clayton,15
-Stapleton,16
-Platt Park,17
-Lowry Field,18
-Sunnyside,19
-Congress Park,20
-Goldsmith,21
-Capitol Hill,22
-Berkeley,23
-Lincoln Park,24
-Cole,25
-Cheesman Park,26
-University,27
-West Colfax,28
-Speer,29
-Sloan Lake,30
-Hilltop,31
-Country Club,32
-Cory - Merrill,33
-City Park,34
-Athmar Park,35
-Gateway - Green Valley Ranch,36
-Rosedale,37
-Whittier,38
-Fort Logan,39
-Skyland,40
-Windsor,41
-Hale,42
-Cherry Creek,43
-Bear Valley,44
-Harvey Park,45
-Hampden South,46
-Civic Center,47
-Jefferson Park,48
-Montclair,49
-Harvey Park South,50
-Regis,51
-University Park,52
-Wellshire,53
-Hampden,54
-Barnum West,55
-Virginia Village,56
-Barnum,57
-University Hills,58
-Northeast Park Hill,59
-East Colfax,60
-Villa Park,61
-Chaffee Park,62
-Belcaro,63
-Ruby Hill,64
-Indian Creek,65
-Globeville,66
-Montbello,67
-DIA,68
-College View - South Platte,69
-Mar Lee,70
-Westwood,71
-Valverde,72
-Sun Valley,73
-Elyria Swansea,74
-Kennedy,75
-Marston,76
-Southmoor Park,77
-Auraria,78
+NeighborhoodID,NeighborhoodName
+1,Washington Virginia Vale
+2,Highland
+3,Five Points
+4,North Park Hill
+5,North Capitol Hill
+6,Baker
+7,West Highland
+8,Overland
+9,South Park Hill
+10,CBD
+11,Washington Park
+12,Union Station
+13,Washington Park West
+14,City Park West
+15,Clayton
+16,Stapleton
+17,Platt Park
+18,Lowry Field
+19,Sunnyside
+20,Congress Park
+21,Goldsmith
+22,Capitol Hill
+23,Berkeley
+24,Lincoln Park
+25,Cole
+26,Cheesman Park
+27,University
+28,West Colfax
+29,Speer
+30,Sloan Lake
+31,Hilltop
+32,Country Club
+33,Cory - Merrill
+34,City Park
+35,Athmar Park
+36,Gateway - Green Valley Ranch
+37,Rosedale
+38,Whittier
+39,Fort Logan
+40,Skyland
+41,Windsor
+42,Hale
+43,Cherry Creek
+44,Bear Valley
+45,Harvey Park
+46,Hampden South
+47,Civic Center
+48,Jefferson Park
+49,Montclair
+50,Harvey Park South
+51,Regis
+52,University Park
+53,Wellshire
+54,Hampden
+55,Barnum West
+56,Virginia Village
+57,Barnum
+58,University Hills
+59,Northeast Park Hill
+60,East Colfax
+61,Villa Park
+62,Chaffee Park
+63,Belcaro
+64,Ruby Hill
+65,Indian Creek
+66,Globeville
+67,Montbello
+68,DIA
+69,College View - South Platte
+70,Mar Lee
+71,Westwood
+72,Valverde
+73,Sun Valley
+74,Elyria Swansea
+75,Kennedy
+76,Marston
+77,Southmoor Park
+78,Auraria
