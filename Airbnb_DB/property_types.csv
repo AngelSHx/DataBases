@@ -1,0 +1,43 @@
+,PropertyTypeName,PropertyTypeID
+0,Entire guesthouse,1
+2,Entire loft,2
+3,Private room in residential home,3
+7,Entire guest suite,4
+8,Entire cottage,5
+11,Entire condominium (condo),6
+12,Entire residential home,7
+13,Private room in condominium (condo),8
+16,Entire rental unit,9
+18,Entire townhouse,10
+19,Private room in townhouse,11
+28,Entire bungalow,12
+81,Private room in bungalow,13
+140,Private room in rental unit,14
+232,Tiny house,15
+286,Castle,16
+309,Room in hostel,17
+311,Shared room in residential home,18
+324,Camper/RV,19
+329,Private room in guest suite,20
+347,Shared room in hostel,21
+403,Private room in guesthouse,22
+468,Entire serviced apartment,23
+472,Private room in bed and breakfast,24
+476,Shipping container,25
+580,Private room in loft,26
+827,Private room,27
+1314,Private room in hostel,28
+1675,Room in boutique hotel,29
+2024,Farm stay,30
+2143,Lighthouse,31
+2180,Room in bed and breakfast,32
+2378,Room in aparthotel,33
+2490,Private room in serviced apartment,34
+2672,Shared room in rental unit,35
+3160,Private room in villa,36
+3170,Room in hotel,37
+3228,Private room in castle,38
+3248,Shared room in condominium (condo),39
+3342,Entire villa,40
+3694,Campsite,41
+3893,Entire vacation home,42
