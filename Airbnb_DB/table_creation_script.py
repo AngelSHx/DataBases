@@ -173,11 +173,11 @@ amenities_output = file_path / "amenities.csv"
 # bookings_output = file_path / "bookings.csv"
 neighborhoods_output = file_path / "neighborhoods.csv"
 
-hosts.to_csv(hosts_output)
-travelers.to_csv(travelers_output)
-properties.to_csv(properties_output)
-neighborhoods.to_csv(neighborhoods_output)
-propertyTypes.to_csv(propertyTypes_output)
-propertyReviews.to_csv(propertyReviews_output)
-amenities.to_csv(amenities_output)
+hosts.to_csv(hosts_output, index=False)
+travelers.to_csv(travelers_output, index=False)
+properties.to_csv(properties_output, index=False)
+neighborhoods.to_csv(neighborhoods_output, index=False)
+propertyTypes.to_csv(propertyTypes_output, index=False)
+propertyReviews.to_csv(propertyReviews_output, index=False)
+amenities.to_csv(amenities_output, index=False)
 # bookings.to_csv(output)
