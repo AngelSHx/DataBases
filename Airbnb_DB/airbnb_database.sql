@@ -153,7 +153,6 @@ CREATE TABLE IF NOT EXISTS `Bookings_Table`(
 
 -- NOTE: replace PATH with FILE PATH
 
-
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO HOSTS TABLE
 LOAD DATA Local INFILE "PATH"
