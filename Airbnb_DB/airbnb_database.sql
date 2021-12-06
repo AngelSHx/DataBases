@@ -172,11 +172,11 @@ CREATE TABLE IF NOT EXISTS `POI_Neighborhoods_Table`(
 -- --------------------------------------------------------------------------------------------------------
 
 
--- NOTE: replace PATH with FILE PATH
+-- NOTE: replace PATH with FILE PATH in format C:/Users/ path to file
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO HOSTS TABLE
-LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/hosts.csv"
+LOAD DATA Local INFILE "PATH"
 INTO TABLE hosts_table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -184,7 +184,7 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO TRAVELERS TABLE
-LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/travelers.csv"
+LOAD DATA Local INFILE "PATH"
 INTO TABLE Travelers_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -192,7 +192,7 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO PROPERTY TYPE TABLE
-LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/propertytypes.csv"
+LOAD DATA Local INFILE "PATH"
 INTO TABLE Property_Type_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -200,7 +200,7 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO NEIGHBORHOODS TABLE
-LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/neighborhoods.csv"
+LOAD DATA Local INFILE "PATH"
 INTO TABLE Neighborhoods_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -208,7 +208,7 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO PROPERTIES TABLE
-LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/properties.csv"
+LOAD DATA Local INFILE "PATH"
 INTO TABLE Properties_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -216,7 +216,7 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO PROPERTIES REVIEWS TABLE
-LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/property_reviews.csv"
+LOAD DATA Local INFILE "PATH"
 INTO TABLE PropertyReviews_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -224,7 +224,7 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO AMENITIES TABLE
-LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/amenities.csv"
+LOAD DATA Local INFILE "PATH"
 INTO TABLE Amenities_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -233,7 +233,7 @@ IGNORE 1 ROWS;
 -- --------------------------------------------------------------------------------------------------------
 
 -- LOAD DATA INTO POI TABLE
-LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/points_of_interest.csv"
+LOAD DATA Local INFILE "PATH"
 INTO TABLE POI_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -241,14 +241,14 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO POI_Neighborhoods TABLE
-LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/points_of_interest_neighborhoods.csv"
+LOAD DATA Local INFILE "PATH"
 INTO TABLE POI_Neighborhoods_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO Booked Dates TABLE
-LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/booked_dates.csv"
+LOAD DATA Local INFILE "PATH"
 INTO TABLE Booked_Dates_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -265,5 +265,5 @@ select * from properties_table;
 select * from propertyreviews_table;
 select * from amenities_table;
 select * from POI_table;
-select * from POI_neighborhood_table;
+select * from POI_neighborhoods_table;
 select * from booked_dates_table;
