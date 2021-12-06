@@ -122,22 +122,17 @@ CREATE TABLE IF NOT EXISTS `Amenities_Table`(
 -- --------------------------------------------------------------------------------------------------------
 -- CREATE BOOKINGS TABLE
 
--- DROP TABLE IF EXISTS `Bookings_Table`;
+DROP TABLE IF EXISTS `Booked_Dates_Table`;
 
--- CREATE TABLE IF NOT EXISTS `Bookings_Table`(
---     BookingID INT(100) NOT NULL,
---     BookingStartDate Date NOT NULL,
---     BookingEndDate Date NOT NULL,
---     ListingID INT(100) NOT NULL,
---     TravelerID Date NOT NULL,
---     
---     PRIMARY KEY (BookingID),
---     
---     Constraint `fk_Bookings_TravelerID`
---     FOREIGN KEY (`TravelerID`)
---     REFERENCES `Travelers_Table` (`TravelerID`)
--- );
-
+CREATE TABLE IF NOT EXISTS `Booked_Dates_Table`(
+	ListingID INT(100) NOT NULL,
+    Date Date NOT NULL,
+    Price INT(100) NOT NULL,
+    Minimum_Nights INT(100) NOT NULL,
+    Maximum_Nights INT(100) NOT NULL,
+    
+    PRIMARY KEY(ListingID, Date)
+);
 
 -- --------------------------------------------------------------------------------------------------------
 -- CREATE POINTS OF INTERST TABLE
@@ -252,13 +247,12 @@ FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 -- --------------------------------------------------------------------------------------------------------
--- LOAD DATA INTO PROPERTIES TABLE
--- NEED REST OF TABLES TO RUN BOOKINGS TABLES
--- LOAD DATA Local INFILE "PATH"
--- INTO TABLE Bookings_Table
--- FIELDS TERMINATED BY ',' 
--- LINES TERMINATED BY '\n'
--- IGNORE 1 ROWS;
+-- LOAD DATA INTO Booked Dates TABLE
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/booked_dates.csv"
+INTO TABLE Booked_Dates_Table
+FIELDS TERMINATED BY ',' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
 
 
 
@@ -272,4 +266,4 @@ select * from propertyreviews_table;
 select * from amenities_table;
 select * from POI_table;
 select * from POI_neighborhood_table;
--- select * from bookings_table;
+select * from booked_dates_table;
