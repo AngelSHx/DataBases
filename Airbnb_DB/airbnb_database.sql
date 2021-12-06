@@ -122,20 +122,46 @@ CREATE TABLE IF NOT EXISTS `Amenities_Table`(
 -- --------------------------------------------------------------------------------------------------------
 -- CREATE BOOKINGS TABLE
 
-DROP TABLE IF EXISTS `Bookings_Table`;
+-- DROP TABLE IF EXISTS `Bookings_Table`;
 
-CREATE TABLE IF NOT EXISTS `Bookings_Table`(
-    BookingID INT(100) NOT NULL,
-    BookingStartDate Date NOT NULL,
-    BookingEndDate Date NOT NULL,
-    ListingID INT(100) NOT NULL,
-    TravelerID Date NOT NULL,
+-- CREATE TABLE IF NOT EXISTS `Bookings_Table`(
+--     BookingID INT(100) NOT NULL,
+--     BookingStartDate Date NOT NULL,
+--     BookingEndDate Date NOT NULL,
+--     ListingID INT(100) NOT NULL,
+--     TravelerID Date NOT NULL,
+--     
+--     PRIMARY KEY (BookingID),
+--     
+--     Constraint `fk_Bookings_TravelerID`
+--     FOREIGN KEY (`TravelerID`)
+--     REFERENCES `Travelers_Table` (`TravelerID`)
+-- );
+
+
+-- --------------------------------------------------------------------------------------------------------
+-- CREATE POINTS OF INTERST TABLE
+DROP TABLE IF EXISTS `POI_Table`;
+
+CREATE TABLE IF NOT EXISTS `POI_Table`(
+    POI_PK INT(100) NOT NULL,
+    POI_Phone VARCHAR(12) NULL,
+    POI_Address VARCHAR(50) NOT NULL,
+    POI_Neighborhood VARCHAR(50) NOT NULL,
     
-    PRIMARY KEY (BookingID),
+    PRIMARY KEY (POI_PK)
+);
+
+-- --------------------------------------------------------------------------------------------------------
+-- CREATE POINTS OF INTERST TABLE
+DROP TABLE IF EXISTS `POI_Neighborhoods_Table`;
+
+CREATE TABLE IF NOT EXISTS `POI_Neighborhoods_Table`(
+    POI_PK INT(100) NOT NULL,
+    POI_Neighborhood_ID INT(100) NOT NULL,
+    POI_Neighborhood VARCHAR(50) NOT NULL,
     
-    Constraint `fk_Bookings_TravelerID`
-    FOREIGN KEY (`TravelerID`)
-    REFERENCES `Travelers_Table` (`TravelerID`)
+    PRIMARY KEY (POI_PK, POI_Neighborhood_ID)
 );
 
 -- NEED REST OF TABLES TO RUN BOOKINGS TABLE
@@ -155,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `Bookings_Table`(
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO HOSTS TABLE
-LOAD DATA Local INFILE "PATH"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/hosts.csv"
 INTO TABLE hosts_table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -163,7 +189,7 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO TRAVELERS TABLE
-LOAD DATA Local INFILE "PATH"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/travelers.csv"
 INTO TABLE Travelers_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -171,7 +197,7 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO PROPERTY TYPE TABLE
-LOAD DATA Local INFILE "PATH"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/propertytypes.csv"
 INTO TABLE Property_Type_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -179,7 +205,7 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO NEIGHBORHOODS TABLE
-LOAD DATA Local INFILE "PATH"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/neighborhoods.csv"
 INTO TABLE Neighborhoods_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -187,36 +213,52 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO PROPERTIES TABLE
-LOAD DATA Local INFILE "PATH"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/properties.csv"
 INTO TABLE Properties_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
--- LOAD DATA INTO PROPERTIES TABLE
-LOAD DATA Local INFILE "PATH"
+-- LOAD DATA INTO PROPERTIES REVIEWS TABLE
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/property_reviews.csv"
 INTO TABLE PropertyReviews_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
--- LOAD DATA INTO PROPERTIES TABLE
-LOAD DATA Local INFILE "PATH"
+-- LOAD DATA INTO AMENITIES TABLE
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/amenities.csv"
 INTO TABLE Amenities_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
--- LOAD DATA INTO PROPERTIES TABLE
--- NEED REST OF TABLES TO RUN BOOKINGS TABLES
-LOAD DATA Local INFILE "PATH"
-INTO TABLE Bookings_Table
+
+-- LOAD DATA INTO POI TABLE
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/points_of_interest.csv"
+INTO TABLE POI_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
+
+-- --------------------------------------------------------------------------------------------------------
+-- LOAD DATA INTO POI_Neighborhoods TABLE
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/points_of_interest_neighborhoods.csv"
+INTO TABLE POI_Neighborhoods_Table
+FIELDS TERMINATED BY ',' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+-- --------------------------------------------------------------------------------------------------------
+-- LOAD DATA INTO PROPERTIES TABLE
+-- NEED REST OF TABLES TO RUN BOOKINGS TABLES
+-- LOAD DATA Local INFILE "PATH"
+-- INTO TABLE Bookings_Table
+-- FIELDS TERMINATED BY ',' 
+-- LINES TERMINATED BY '\n'
+-- IGNORE 1 ROWS;
 
 
 
@@ -228,4 +270,6 @@ select * from neighborhoods_table;
 select * from properties_table;
 select * from propertyreviews_table;
 select * from amenities_table;
-select * from bookings_table;
+select * from POI_table;
+select * from POI_neighborhood_table;
+-- select * from bookings_table;
