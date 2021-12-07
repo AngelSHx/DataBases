@@ -80,3 +80,51 @@ WITH best_prices AS
 -- --------------------------------------------------------------------------------------------------------
 -- SELECT QUERIES (BEGIN: )
 -- --------------------------------------------------------------------------------------------------------
+
+
+
+
+-- --------------------------------------------------------------------------------------------------------
+-- STORED PROGRAMS
+-- --------------------------------------------------------------------------------------------------------
+-- STORED PROGRAM (1) THAT WILL SET PROPERTY PRICES AS CHEAP, AVERAGE, EXPENSIVE
+DELIMITER//
+CREATE FUNCTION House_level (
+    Price DECIMAL(10, 0)
+) 
+RETURNS VARCHAR(30)
+DETERMINISTIC
+BEGIN
+    DECLARE house_level VARCHAR(20);
+    CASE
+        when Price > 800 then set house_level = 'Expensive';
+        when Price <= 800 and Price >= 400 THEN set house_level = 'Affordable';
+        when Price < 400 THEN set house_level = 'Cheap';
+    END CASE;
+    RETURN (house_level);
+END//
+DELIMITER;
+
+
+-- STORED PROGRAM (2) 
+
+
+-- --------------------------------------------------------------------------------------------------------
+-- STORED PROCEDURE
+-- --------------------------------------------------------------------------------------------------------
+
+
+-- --------------------------------------------------------------------------------------------------------
+-- TRIGGER
+-- --------------------------------------------------------------------------------------------------------
+
+
+-- --------------------------------------------------------------------------------------------------------
+-- QUERIES CALLING STORED FUNCTIONS/PROGRAMS
+-- --------------------------------------------------------------------------------------------------------
+-- QUERY 1 FOR STORED PROGRAM (1)
+SELECT PropertyID, House_Level(Price) from properties_table;
+
+-- QUERY 2 FOR STORED PROGRAM (2)
+
+-- QUERY FOR STORED PROCEDURE
