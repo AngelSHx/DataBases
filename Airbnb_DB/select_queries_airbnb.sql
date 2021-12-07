@@ -87,7 +87,7 @@ WITH best_prices AS
 -- --------------------------------------------------------------------------------------------------------
 -- STORED PROGRAMS
 -- --------------------------------------------------------------------------------------------------------
--- STORED PROGRAM (1) THAT WILL SET PROPERTY PRICES AS CHEAP, AVERAGE, EXPENSIVE
+-- STORED FUNCTION (1) THAT WILL SET PROPERTY PRICES AS CHEAP, AVERAGE, EXPENSIVE
 DELIMITER//
 CREATE FUNCTION House_level (
     Price DECIMAL(10, 0)
@@ -106,7 +106,7 @@ END//
 DELIMITER;
 
 
--- STORED PROGRAM (2) 
+-- STORED FUNCTION (2) 
 
 
 -- --------------------------------------------------------------------------------------------------------
