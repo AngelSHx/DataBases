@@ -84,7 +84,7 @@ DROP TABLE IF EXISTS `PropertyReviews_Table`;
 CREATE TABLE IF NOT EXISTS `PropertyReviews_Table`(
     PropertyReviewsID INT(100) NOT NULL,
     PropertyID INT(100) NOT NULL,
-    UserID INT NOT NULL,
+    TravelerID INT NOT NULL,
     Comments VARCHAR(25) NOT NULL,
     ReviewDate Date NOT NULL,
     
