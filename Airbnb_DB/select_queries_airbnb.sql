@@ -76,6 +76,49 @@ WITH best_prices AS
 -- SELECT QUERIES (END: ANGEL)
 -- --------------------------------------------------------------------------------------------------------
 
+-- --------------------------------------------------------------------------------------------------------
+-- SELECT QUERIES (BEGIN: LIAM)
+-- --------------------------------------------------------------------------------------------------------
+-- SELECT STATEMENT 1 -- Basic
+-- Business Question: Invester would like to know the number of properties in the Denver area
+SELECT count(distinct PropertyID)
+FROM Properties_Table;
+
+-- SELECT STATEMENT 2 -- Basic
+-- Business Question: Invester would like to know the most common first name for hosts
+SELECT count(*) as count, HostFirstName
+FROM Hosts_Table
+GROUP BY HostFirstName
+ORDER BY count DESC;
+
+-- SELECT STATEMENT 3 -- Join 2 or more tables
+-- Business Question: Invester would like to know how many hosts have more than one listing
+SELECT b.HostID, count(*) as count
+FROM Properties_Table a 
+	JOIN Hosts_Table b ON a.HostID = b.HostID
+GROUP BY b.HostID
+HAVING count > 1;
+
+-- SELECT STATEMENT 4- Join 2 or more tables
+-- Business Question: Invester would like to know which neighborhoods have the most pools
+SELECT a.NeighborhoodName, count(*)
+FROM Neighborhood_Table a
+	JOIN Properties_Table b ON a.NeighborhoodID = b.NeighborhoodID
+    JOIN Amenities_Table c ON b.PropertyID = c.PropertyID
+GROUP BY a.NeighborhoodName
+HAVING c.Pool = True;
+
+
+-- SELECT STATEMENT 5 -- Subquery, window function, CTE, self-join
+-- Business Question: Invester would like to know average number of reviews per property
+SELECT avg(count) FROM
+	( SELECT PropertyID, count(*)  as count 
+	  FROM PropertyReviews_Table
+	  GROUP BY PropertyID );
+-- --------------------------------------------------------------------------------------------------------
+-- SELECT QUERIES (END: LIAM)
+-- --------------------------------------------------------------------------------------------------------
+
 
 -- --------------------------------------------------------------------------------------------------------
 -- SELECT QUERIES (BEGIN: )
