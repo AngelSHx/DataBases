@@ -131,7 +131,7 @@ SELECT avg(count) FROM
 -- STORED PROGRAMS
 -- --------------------------------------------------------------------------------------------------------
 -- STORED FUNCTION (1) THAT WILL SET PROPERTY PRICES AS CHEAP, AVERAGE, EXPENSIVE
-DELIMITER//
+DELIMITER //
 CREATE FUNCTION House_level (
     Price DECIMAL(10, 0)
 ) 
@@ -145,18 +145,42 @@ BEGIN
         when Price < 400 THEN set house_level = 'Cheap';
     END CASE;
     RETURN (house_level);
-END//
-DELIMITER;
+END //
+DELIMITER ;
 
 
 -- STORED FUNCTION (2) 
 
 
+
 -- --------------------------------------------------------------------------------------------------------
 -- STORED PROCEDURE
 -- --------------------------------------------------------------------------------------------------------
+DROP procedure IF EXISTS `GetNumberofPropertiesPerHost`;
+DELIMITER //
+CREATE PROCEDURE GetNumberofPropertiesPerHost()
+BEGIN
+	SELECT H.HostID, H.HostFirstName, H.HostLastName, Count(*) AS `Number_of_Properties` FROM hosts_table as H
+	JOIN properties_table as P ON H.HostId = P.HostID
+	GROUP BY H.HostId
+	ORDER BY Number_of_Properties desc
+	LIMIT 10;
+END //
+DELIMITER ;
 
+DROP procedure IF EXISTS `GetAllNeighborhoodProperties`;
 
+DELIMITER //
+CREATE PROCEDURE GetAllNeighborhoodProperties(
+	IN neighborhood varchar(30)
+)
+BEGIN
+	SELECT P.PropertyID, H.HostID, N.NeighborhoodName FROM hosts_table as H
+	JOIN properties_table as P ON H.HostId = P.HostID
+	JOIN neighborhoods_table as N ON P.neighborhoodID = N.neighborhoodID
+	WHERE N.NeighborhoodName like CONCAT('%',neighborhood,'%');
+END //
+DELIMITER ;
 -- --------------------------------------------------------------------------------------------------------
 -- TRIGGER
 -- --------------------------------------------------------------------------------------------------------
@@ -166,8 +190,10 @@ DELIMITER;
 -- QUERIES CALLING STORED FUNCTIONS/PROGRAMS
 -- --------------------------------------------------------------------------------------------------------
 -- QUERY 1 FOR STORED PROGRAM (1)
-SELECT PropertyID, House_Level(Price) from properties_table;
-
+SELECT PropertyID, House_Level(Price) from properties_table; 
 -- QUERY 2 FOR STORED PROGRAM (2)
 
 -- QUERY FOR STORED PROCEDURE
+CALL GetNumberofPropertiesPerHost();
+CALL GetAllNeighborhoodProperties('Highland');
+CALL GetAllNeighborhoodProperties('Five Points');
