@@ -131,6 +131,7 @@ SELECT avg(count) FROM
 -- STORED PROGRAMS
 -- --------------------------------------------------------------------------------------------------------
 -- STORED FUNCTION (1) THAT WILL SET PROPERTY PRICES AS CHEAP, AVERAGE, EXPENSIVE
+DROP function IF EXISTS `House_level`;
 DELIMITER //
 CREATE FUNCTION House_level (
     Price DECIMAL(10, 0)
@@ -148,8 +149,30 @@ BEGIN
 END //
 DELIMITER ;
 
+DROP function IF EXISTS `POI_rank`;
+-- STORED FUNCTION (2) THAT WILL SET PROPERTY POI Rank as "Many POIs", "Some POIs", "Very Few POIs"
+DELIMITER //
+CREATE FUNCTION POI_rank (
+    NeighborhoodID Int
+) 
+RETURNS VARCHAR(30)
+DETERMINISTIC
+BEGIN
+	DECLARE poi_rating VARCHAR(20);
+    DECLARE poi_count INT;
+    SET poi_count = (SELECT COUNT(*) as `POI_Count` FROM poi_neighborhoods_table as PN
+	JOIN poi_table as PT ON PN.POI_PK = PT.POI_PK
+    WHERE PN.POI_Neighborhood_ID = neighborhoodID
+    GROUP BY POI_Neighborhood_ID);
+	CASE
+ 		when poi_count > 10 then set poi_rating = 'Many POIs';
+ 		when poi_count < 10 and poi_count >= 5 THEN set poi_rating = 'Some POIs';
+ 		when (poi_count < 5) OR (poi_count is NULL) THEN set poi_rating = 'Very Few POIs';
+ 	END CASE;
+	RETURN (poi_rating);
+END //
+DELIMITER ;
 
--- STORED FUNCTION (2) 
 
 
 
@@ -181,6 +204,7 @@ BEGIN
 	WHERE N.NeighborhoodName like CONCAT('%',neighborhood,'%');
 END //
 DELIMITER ;
+
 -- --------------------------------------------------------------------------------------------------------
 -- TRIGGER
 -- --------------------------------------------------------------------------------------------------------
@@ -192,8 +216,10 @@ DELIMITER ;
 -- QUERY 1 FOR STORED PROGRAM (1)
 SELECT PropertyID, House_Level(Price) from properties_table; 
 -- QUERY 2 FOR STORED PROGRAM (2)
-
+SELECT PropertyID, POI_rank(NeighborhoodID) as `POI_Rating` from properties_table
+ORDER BY POI_Rating asc;
 -- QUERY FOR STORED PROCEDURE
 CALL GetNumberofPropertiesPerHost();
 CALL GetAllNeighborhoodProperties('Highland');
 CALL GetAllNeighborhoodProperties('Five Points');
+
