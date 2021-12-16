@@ -85,11 +85,9 @@ SELECT count(distinct PropertyID)
 FROM Properties_Table;
 
 -- SELECT STATEMENT 2 -- Basic
--- Business Question: Invester would like to know the most common first name for hosts
-SELECT count(*) as count, HostFirstName
-FROM Hosts_Table
-GROUP BY HostFirstName
-ORDER BY count DESC;
+-- Business Question: Invester would like to know the number of hosts in the Denver area
+SELECT count(distinct HostID)
+FROM Hosts_Table;
 
 -- SELECT STATEMENT 3 -- Join 2 or more tables
 -- Business Question: Invester would like to know how many hosts have more than one listing
@@ -97,17 +95,18 @@ SELECT b.HostID, count(*) as count
 FROM Properties_Table a 
 	JOIN Hosts_Table b ON a.HostID = b.HostID
 GROUP BY b.HostID
-HAVING count > 1;
+HAVING count > 1
+ORDER BY count DESC;
 
 -- SELECT STATEMENT 4- Join 2 or more tables
 -- Business Question: Invester would like to know which neighborhoods have the most pools
-SELECT a.NeighborhoodName, count(*)
-FROM Neighborhood_Table a
+SELECT a.NeighborhoodName, count(*) as pools
+FROM Neighborhoods_Table a
 	JOIN Properties_Table b ON a.NeighborhoodID = b.NeighborhoodID
     JOIN Amenities_Table c ON b.PropertyID = c.PropertyID
+WHERE c.Pool = 'True'
 GROUP BY a.NeighborhoodName
-HAVING c.Pool = True;
-
+ORDER BY pools DESC;
 
 -- SELECT STATEMENT 5 -- Subquery, window function, CTE, self-join
 -- Business Question: Invester would like to know average number of reviews per property
