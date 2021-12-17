@@ -249,12 +249,22 @@ BEGIN
 	WHERE N.NeighborhoodName like CONCAT('%',neighborhood,'%');
 END //
 DELIMITER ;
-
+DROP TRIGGER negative_host_id;
 -- --------------------------------------------------------------------------------------------------------
 -- TRIGGER
 -- --------------------------------------------------------------------------------------------------------
+-- IF HOSTID IS NEGATIVE, WILL SET HOSTID TO 0, BUT BECAUSE WE HAVE AUTOINCREMENT ON, IT WILL ADD THE NEXT VALUE
+-- AVALIABLE FROM PREVIOUS ROW IN HOSTID
+DELIMITER //
+CREATE TRIGGER negative_host_id
+BEFORE INSERT ON hosts_table FOR EACH ROW
+BEGIN
+IF NEW.HostID < 0 THEN SET NEW.HostID = 0;
+END IF;
+END //
+DELIMITER ;
 
-
+INSERT INTO hosts_table VALUES (-12345, 'Mark', 'Mywords');
 -- --------------------------------------------------------------------------------------------------------
 -- QUERIES CALLING STORED FUNCTIONS/PROGRAMS
 -- --------------------------------------------------------------------------------------------------------
@@ -267,4 +277,3 @@ ORDER BY POI_Rating asc;
 CALL GetNumberofPropertiesPerHost();
 CALL GetAllNeighborhoodProperties('Highland');
 CALL GetAllNeighborhoodProperties('Five Points');
-
