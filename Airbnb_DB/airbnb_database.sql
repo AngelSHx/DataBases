@@ -1,4 +1,3 @@
-
 DROP SCHEMA IF EXISTS `airbnb_database` ;
 CREATE SCHEMA IF NOT EXISTS `airbnb_database` DEFAULT CHARACTER SET utf8mb4 ;
 
@@ -75,7 +74,8 @@ CREATE TABLE IF NOT EXISTS `Properties_Table`(
     PRIMARY KEY(PropertyID),
 
     FOREIGN KEY(PropertyTypeID) REFERENCES Property_Type_Table (PropertyTypeID),
-    FOREIGN KEY(NeighborhoodID) REFERENCES Neighborhoods_Table (NeighborhoodID)
+    FOREIGN KEY(NeighborhoodID) REFERENCES Neighborhoods_Table (NeighborhoodID),
+    FOREIGN KEY(HostID) REFERENCES Hosts_Table (HostID)
 );
 -- --------------------------------------------------------------------------------------------------------
 -- CREATE PROPERTY REVIEWS TABLE
@@ -90,9 +90,8 @@ CREATE TABLE IF NOT EXISTS `PropertyReviews_Table`(
     
     PRIMARY KEY (PropertyReviewsID),
     
-	CONSTRAINT `fk_PropertyReviews_PropertyID`
-    FOREIGN KEY (`PropertyID`)
-    REFERENCES `properties_table` (`PropertyID`)
+    FOREIGN KEY (`PropertyID`) REFERENCES `properties_table` (`PropertyID`),
+    FOREIGN KEY (`TravelerID`) REFERENCES `travelers_table` (`TravelerID`)
 );
 
 -- --------------------------------------------------------------------------------------------------------
@@ -113,10 +112,7 @@ CREATE TABLE IF NOT EXISTS `Amenities_Table`(
     -- THERE WAS AN ERROR WHEN DEALING WITH THE VALUES IN THE CSV FILE
     -- VALUES ARE TRUE,FALSE AND NOT 1, 0
 
-    
-    CONSTRAINT `fk_Amenities_PropertyID`
-    FOREIGN KEY (`PropertyID`)
-    REFERENCES `properties_table` (`PropertyID`)
+    FOREIGN KEY (`PropertyID`) REFERENCES `properties_table` (`PropertyID`)
     );
     
 -- --------------------------------------------------------------------------------------------------------
@@ -131,7 +127,8 @@ CREATE TABLE IF NOT EXISTS `Booked_Dates_Table`(
     Minimum_Nights INT(100) NOT NULL,
     Maximum_Nights INT(100) NOT NULL,
     
-    PRIMARY KEY(ListingID, Date)
+    PRIMARY KEY(ListingID, Date),
+    FOREIGN KEY (`ListingID`) REFERENCES `properties_table` (`PropertyID`)
 );
 
 -- --------------------------------------------------------------------------------------------------------
@@ -156,7 +153,9 @@ CREATE TABLE IF NOT EXISTS `POI_Neighborhoods_Table`(
     POI_Neighborhood_ID INT(100) NOT NULL,
     POI_Neighborhood VARCHAR(50) NOT NULL,
     
-    PRIMARY KEY (POI_PK, POI_Neighborhood_ID)
+    PRIMARY KEY (POI_PK, POI_Neighborhood_ID),
+    FOREIGN KEY (`POI_Neighborhood_ID`) REFERENCES `neighborhoods_table` (`NeighborhoodID`),
+    FOREIGN KEY (`POI_PK`) REFERENCES `POI_table` (`POI_PK`)
 );
 
 -- NEED REST OF TABLES TO RUN BOOKINGS TABLE
