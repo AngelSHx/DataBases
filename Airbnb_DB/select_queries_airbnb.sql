@@ -77,6 +77,52 @@ WITH best_prices AS
 -- --------------------------------------------------------------------------------------------------------
 
 -- --------------------------------------------------------------------------------------------------------
+-- SELECT QUERIES (Begin: Kynndal)
+-- --------------------------------------------------------------------------------------------------------
+
+-- SELECT STATEMENT 1 -- Basic
+-- Business Question: Investor wants to know which properties have air condition and a pool
+Select PropertyID
+From amenities 
+WHERE AirConditioning = 'True' and Pool = 'True';
+
+-- SELECT STATEMENT 2 -- Basic
+-- Business Question: an invenstor would like to know how many properties are pet friendly
+Select count(PropertyID) AS '# of pet friendly properties'
+FROM amenities
+WHERE PetFriendly = 'True';
+
+-- SELECT STATEMENT 3 -- Join 2 or more tables
+-- Business Question: An investor would like to know which property types comes with free parking and AC
+Select t.PropertyTypeName, count(*) as Freeparking_AC
+From propertytypes as t
+join properties as p on t.PropertyTypeID = p.PropertyTypeID
+join amenities as a on p.PropertyID = a.PropertyID
+where a.AirConditioning ='True' and a.FreeParking = 'True'
+Group by t.PropertyTypeName;
+
+-- SELECT STATEMENT 4 -- Join 2 or more tables
+-- Business Question: An investor would like to know the average nightly price of each property type
+Select t.propertyTypeName, round(avg(p.price),2) as 'nightly price'
+from propertytypes as t
+inner join properties as p
+on t.PropertyTypeID = p.PropertyTypeID
+Group by t.PropertyTypeID;
+
+-- SELECT STATEMENT 5 -- Subquery, window function, CTE, self-join
+-- Business Question: An investor would like to know which listings are expensive, afforadable, or cheap
+Select ListingName,
+CASE when price > 500 Then 'expensive'
+When price > 200 Then 'affordable'
+Else 'cheap' END
+AS Nightly_Price
+From properties;
+
+-- --------------------------------------------------------------------------------------------------------
+-- SELECT QUERIES (END: Kynndal)
+-- --------------------------------------------------------------------------------------------------------
+
+-- --------------------------------------------------------------------------------------------------------
 -- SELECT QUERIES (BEGIN: LIAM)
 -- --------------------------------------------------------------------------------------------------------
 -- SELECT STATEMENT 1 -- Basic
