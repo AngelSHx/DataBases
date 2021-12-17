@@ -87,7 +87,7 @@ From amenities
 WHERE AirConditioning = 'True' and Pool = 'True';
 
 -- SELECT STATEMENT 2 -- Basic
--- Business Question: an invenstor would like to know how many properties are pet friendly
+-- Business Question: an investor would like to know how many properties are pet friendly
 Select count(PropertyID) AS '# of pet friendly properties'
 FROM amenities
 WHERE PetFriendly = 'True';
@@ -164,13 +164,55 @@ SELECT avg(count) FROM
 -- SELECT QUERIES (END: LIAM)
 -- --------------------------------------------------------------------------------------------------------
 
-
 -- --------------------------------------------------------------------------------------------------------
--- SELECT QUERIES (BEGIN: )
+-- SELECT QUERIES (BEGIN: SHIVANI )
 -- --------------------------------------------------------------------------------------------------------
+-- SELECT STATEMENT 1 -- Basic
+-- Business Question: An investor is interested in which month (in the first quarter) has the most bookings so far.
+SELECT Month(Date) as `Month`, Count(*) as `Bookings` FROM booked_dates_table
+GROUP BY Month
+ORDER BY Bookings desc;
 
+-- SELECT STATEMENT 2 -- Basic
+-- Business Question: Investor is interested in property type distribution by neighborhoods.
+SELECT N.NeighborhoodName, PT.PropertyTypeName, COUNT(*) as `PropertyCount` FROM property_type_table as PT 
+JOIN properties_table as P ON PT.PropertyTypeID = P.PropertyTypeID
+JOIN neighborhoods_table as N ON N.neighborhoodID = P.neighborhoodID
+GROUP BY NeighborhoodName, PropertyTypeName
+ORDER BY NeighborhoodName, PropertyTypeName;
 
+-- SELECT STATEMENT 3 -- Join 2 or more tables
+-- Business Question: An investor wants to know the 100 top most reviewed properties and which neighborhoods are they located in.
+SELECT PR.PropertyID, COUNT(PR.PropertyReviewsID) as `ReviewCount`, N.NeighborhoodName FROM propertyreviews_table as PR
+JOIN properties_table as PT on PR.PropertyID = PT.PropertyID
+JOIN neighborhoods_table as N on N.neighborhoodID = PT.neighborhoodID
+GROUP BY PropertyID
+ORDER BY ReviewCount desc
+LIMIT 100;
 
+-- SELECT STATEMENT 4 -- Join 2 or more tables
+-- Business Question: An investor wants to know which niegborhoods have the most bookings in March 2022.
+SELECT Count(*) as `Bookings`, N.NeighborhoodName FROM booked_dates_table as B
+JOIN properties_table as P on B.listingID = P.propertyID
+JOIN neighborhoods_table as N on N.neighborhoodID = P.neighborhoodID
+WHERE Month(Date) = 3
+GROUP BY N.NeighborhoodName
+ORDER BY Bookings desc;
+
+-- SELECT STATEMENT 5 -- Subquery, window function, CTE, self-join
+-- An investor is interested in finding the host with the most properties and then seeing how their properties are distributed by neighborhoods. 
+SELECT N.NeighborhoodName, Count(P.PropertyID) as `NumProperties` FROM properties_table as P
+JOIN neighborhoods_table as N on P.neighborhoodID = N.neighborhoodID
+WHERE P.HostID in (SELECT * FROM (SELECT H.HostID FROM hosts_table as H
+	JOIN properties_table as P ON H.HostId = P.HostID
+	GROUP BY H.HostId
+	ORDER BY Count(*) desc
+    LIMIT 1) as q)
+GROUP BY NeighborHoodName
+ORDER BY NumProperties desc;
+-- --------------------------------------------------------------------------------------------------------
+-- SELECT QUERIES (END: SHIVANI )
+-- --------------------------------------------------------------------------------------------------------
 
 -- --------------------------------------------------------------------------------------------------------
 -- STORED PROGRAMS

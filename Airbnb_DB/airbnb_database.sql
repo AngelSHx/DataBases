@@ -176,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `POI_Neighborhoods_Table`(
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO HOSTS TABLE
-LOAD DATA Local INFILE "PATH"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/csv_files_SQL/hosts.csv"
 INTO TABLE hosts_table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -184,7 +184,7 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO TRAVELERS TABLE
-LOAD DATA Local INFILE "PATH"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/csv_files_SQL/travelers.csv"
 INTO TABLE Travelers_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -192,7 +192,7 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO PROPERTY TYPE TABLE
-LOAD DATA Local INFILE "PATH"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/csv_files_SQL/propertytypes.csv"
 INTO TABLE Property_Type_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -200,7 +200,7 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO NEIGHBORHOODS TABLE
-LOAD DATA Local INFILE "PATH"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/csv_files_SQL/neighborhoods.csv"
 INTO TABLE Neighborhoods_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -208,7 +208,7 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO PROPERTIES TABLE
-LOAD DATA Local INFILE "PATH"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/csv_files_SQL/properties.csv"
 INTO TABLE Properties_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -216,7 +216,7 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO PROPERTIES REVIEWS TABLE
-LOAD DATA Local INFILE "PATH"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/csv_files_SQL/property_reviews.csv"
 INTO TABLE PropertyReviews_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -224,7 +224,7 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO AMENITIES TABLE
-LOAD DATA Local INFILE "PATH"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/csv_files_SQL/amenities.csv"
 INTO TABLE Amenities_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -233,7 +233,7 @@ IGNORE 1 ROWS;
 -- --------------------------------------------------------------------------------------------------------
 
 -- LOAD DATA INTO POI TABLE
-LOAD DATA Local INFILE "PATH"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/csv_files_SQL/points_of_interest.csv"
 INTO TABLE POI_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
@@ -241,14 +241,14 @@ IGNORE 1 ROWS;
 
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO POI_Neighborhoods TABLE
-LOAD DATA Local INFILE "PATH"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/csv_files_SQL/points_of_interest_neighborhoods.csv"
 INTO TABLE POI_Neighborhoods_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 -- --------------------------------------------------------------------------------------------------------
 -- LOAD DATA INTO Booked Dates TABLE
-LOAD DATA Local INFILE "PATH"
+LOAD DATA Local INFILE "C:/Users/negis/Documents/DataBases/Airbnb_DB/csv_files_SQL/booked_dates.csv"
 INTO TABLE Booked_Dates_Table
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
