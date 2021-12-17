@@ -249,12 +249,13 @@ BEGIN
 	WHERE N.NeighborhoodName like CONCAT('%',neighborhood,'%');
 END //
 DELIMITER ;
-DROP TRIGGER negative_host_id;
+
 -- --------------------------------------------------------------------------------------------------------
 -- TRIGGER
 -- --------------------------------------------------------------------------------------------------------
 -- IF HOSTID IS NEGATIVE, WILL SET HOSTID TO 0, BUT BECAUSE WE HAVE AUTOINCREMENT ON, IT WILL ADD THE NEXT VALUE
 -- AVALIABLE FROM PREVIOUS ROW IN HOSTID
+DROP TRIGGER IF EXISTS negative_host_id;
 DELIMITER //
 CREATE TRIGGER negative_host_id
 BEFORE INSERT ON hosts_table FOR EACH ROW
