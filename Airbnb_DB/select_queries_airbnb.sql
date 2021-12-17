@@ -189,7 +189,7 @@ ORDER BY ReviewCount desc
 LIMIT 100;
 
 -- SELECT STATEMENT 4 -- Join 2 or more tables
--- Business Question: An investor wants to know which niegborhoods have the most bookings in March 2022.
+-- Business Question: An investor wants to know which neighborhoods have the most bookings in March 2022.
 SELECT Count(*) as `Bookings`, N.NeighborhoodName FROM booked_dates_table as B
 JOIN properties_table as P on B.listingID = P.propertyID
 JOIN neighborhoods_table as N on N.neighborhoodID = P.neighborhoodID

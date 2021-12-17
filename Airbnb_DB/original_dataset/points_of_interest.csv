@@ -1,0 +1,136 @@
+PHONE,CITY,ZIP,URL,MAJOR,POI_NAME,ADDRESS_ID,ADDRESS_LINE1,ADDRESS_LINE2,STATE
+ ,Denver,0.0, , ,Colorado State Bank Building,None,1600 Broadway,None,None
+ ,Denver,0.0, , ,1999 Broadway,None,1999 Broadway,None,None
+ ,Denver,0.0, , ,Hyatt Regency,None,1750 Welton St.,None,None
+303-777-4441,Denver,80209.0,http://www.du.edu/phipps/, ,Phipps Mansion,None,3400 Belcaro Dr.,None,None
+303-571-4401,Denver,80204.0,http://www.museo.org/, ,Museo de las Americas,None,861 Santa Fe Dr.,None,None
+303-322-1053,Denver,0.0, , ,"Denver Museum of Miniatures, Dolls and Toys",None,1880 Gaylord St.,None,None
+303-322-7009,Denver,80205.0,http://www.dmns.org/, ,Denver Museum of Nature and Science,None,2001 Colorado Blvd.,None,None
+303-260-6000,Denver,80202.0,http://www.denverpavilions.com, ,Denver Pavilions Shopping Center,None,500 16th St.,None,None
+303-296-0219,Denver,80216.0,http://www.suteatro.org/, ,El Centro Su Teatro,None,4725 High St.,None,None
+303-761-0117,Denver,80235.0, , ,Fort Logan National Cemetery,None,3698 S. Sheridan Blvd.,None,None
+303-866-3682,Denver,0.0, , ,Governor's Mansion,None,400 E. 8th Ave.,None,None
+303-894-2505,Denver,80203.0, , ,Grant-Humphreys Mansion,None,770 Pennsylvania St.,None,None
+303-446-9207,Denver,80220.0, , ,Houston Fine Arts Center,None,7111 Montview Blvd.,None,None
+303-322-7009,Denver,80205.0,http://www.dmnh.org/imax.htm, ,Imax Theatre and Gates Planetarium,None,2001 Colorado Blvd.,None,None
+303-744-6883,Denver,80203.0,http://www.landmarktheatres.com/Market/Denver/MayanTheatre.htm, ,Mayan Theater,None,110 Broadway St.,None,None
+303-556-2400,Denver,80204.0,http://www.mscd.edu/,YES,Metropolitan State College of Denver,None,1380 Lawrence St.,None,None
+303-458-4850,Denver,0.0, ,YES,Invesco Field at Mile High Stadium,None,2755 W. 17th Ave.,None,None
+303-399-2660,Denver,80246.0,http://www.mizelarts.org/, ,Mizel Arts Center,None,350 S. Dahlia St.,None,None
+303-832-4092,Denver,80203.0,http://www.mollybrown.org/,YES,Molly Brown House Museum,None,1340 Pennsylvania St.,None,None
+303-297-1166,Denver,80216.0,http://www.nationalwestern.com, ,National Western Complex,None,4655 Humboldt St.,None,None
+303-561-4450,Denver,80211.0,http://www.oceanjourney.com/,YES,Ocean Journey,None,700 Water St.,None,None
+303-831-9448,Denver,80218.0, , ,Ogden Theatre,None,935 E. Colfax Ave.,None,None
+303-388-3900,Denver,80206.0,http://www.taubman.com/shopcen/frmsets/1024/html/locater/1024fr, ,Cherry Creek Shopping Center,None,3000 E. 1st Ave.,None,None
+303-825-4904,Denver,80202.0, ,YES,Paramount Theater,None,1631 Glenarm Pl.,None,None
+303-458-4900,Denver,80221.0,http://www.regis.edu/,YES,Regis University,None,3333 Regis Blvd.,None,None
+ ,Denver,80220.0, , ,Richthofen Castle,None,7020 E. 12th Ave.,None,None
+303-871-2336,Denver,80208.0,http://www.du.edu/RitchieCenter/, ,Ritchie Events Center,None,2240 E. Buchtel Blvd.,None,None
+303-866-2604,Denver,80203.0,http://www.archives.state.co.us/cap/first.htm,YES,State Capitol,None,200 E. Colfax Ave.,None,None
+303-572-6868,Denver,80202.0, , ,Tabor Center,None,"1201 16th St., Suite 120",None,None
+303-936-8441,Denver,80236.0,http://www.tlhu.edu/, ,Teikyo Loretto Heights,None,3001 S. Federal Blvd.,None,None
+303-534-1012,Denver,80202.0, ,YES,Union Station,None,1701 Wynkoop St.,None,None
+303-405-4761,Denver,80204.0,http://www.usmint.gov/mint_tours/index.cfm?action=denver,YES,United States Mint at Denver,None,320 W. Colfax Ave.,None,None
+303-399-1859,Denver,80246.0,http://denvergov.com/dephome.asp?depid=105, ,Four Mile House and Historic Park,None,715 S. Forest St.,None,None
+303-753-6046,Denver,80224.0,http://rmcad.edu/, ,Rocky Mountain College of Art and Design,None,6875 E. Evans Ave.,None,None
+303-556-2400,Denver,80202.0,http://www.cudenver.edu/,YES,University of Colorado at Denver,None,1250 14th St.,None,None
+303-372-0000,Denver,0.0, ,YES,University of Colorado Health Sciences Center,None,4200 E. 9th Ave.,None,None
+303-871-2000,Denver,80208.0,http://www.du.edu/,YES,University of Denver,None,2199 S. University Blvd.,None,None
+303-405-8555,Denver,80204.0,http://www.pepsicenter.com,YES,Pepsi Center,None,1000 Chopper Pl.,None,None
+303-342-2000,Denver,80249.0,http://www.flydenver.com/, ,Denver International Airport,None,8500 Pena Blvd.,None,None
+720-865-5000,Denver,80204.0,http://www.denverartmuseum.org/,YES,Denver Art Museum,None,100 W. 14th Ave. Parkway,None,None
+303-477-1621,Denver,80211.0,http://www.lakesideamusementpark.com, ,Lakeside Amusement Park,None,4601 Sheridan Blvd.,None,None
+303-556-3291,Denver,80204.0, , ,Ninth Street Historic Park,None,1027 9th St.,None,None
+303-861-8888,Denver,80218.0,http://www.tchden.org/,YES,Children's Hospital,None,1056 E. 19th Ave.,None,None
+303-295-4444,Denver,80216.0,http://www.denvergov.org/dephome.asp?depid=58, ,Denver Coliseum,None,4600 Humboldt St.,None,None
+303-376-4800,Denver,80205.0,http://www.denverzoo.org/, ,Denver Zoo,None,2300 Steele St.,None,None
+303-433-7444,Denver,80211.0,http://www.cmdenver.org/navigation.html,YES,Children's Museum,None,2121 Childrens Museum Dr.,None,None
+303-871-5172,Denver,0.0, , ,Chamberlain Observatory,None,2390 E. Warren Ave.,None,None
+ ,Denver,0.0, , ,Sloan's Lake,None, ,None,None
+ ,Denver,0.0, , ,Federal District,None, ,None,None
+ ,Denver,0.0, , ,410 W 17th St,None,410 W. 17th St.,None,None
+ ,Denver,0.0, , ,World Trade Center,None,1625 Broadway,None,None
+303-893-3333,Denver,0.0, , ,Adam's Mark Hotel,None,1550 Court Pl.,None,None
+ ,Denver,0.0, , ,1899 Wynkoop,None,1899 Wynkoop St.,None,None
+ ,Denver,0.0, , ,Blake Street Terrace,None,1860 Blake St.,None,None
+ ,Denver,0.0, , ,Warwick Hotel,None, ,None,None
+ ,Denver,0.0, , ,Mellon Financial Center,None,1775 Sherman St.,None,None
+ ,Denver,0.0, , ,Lincoln Center,None,1660 Lincoln St.,None,None
+ ,Denver,0.0, , ,17th Street Plaza,None,1225 17th St.,None,None
+ ,Denver,0.0, , ,Denver Dry Building,None,700 16th St.,None,None
+ ,Denver,0.0, , ,Hotel Teatro,None,1100 14th St.,None,None
+ ,Denver,0.0, , ,One Tabor Center,None,1200 17th St.,None,None
+ ,Denver,0.0, , ,Columbine Place,None,216 16th St.,None,None
+ ,Denver,0.0, , ,Millenium Financial Center,None, ,None,None
+ ,Denver,0.0, , ,La Alma / Lincoln Park Neighborhood,None, ,None,None
+ ,Denver,0.0, , ,Five Points,None, ,None,None
+ ,Denver,0.0, , ,Larimer Corporate Plaza,None,1675 Larimer St.,None,None
+303-556-3276,Denver,80204.0,http://www.ahec.edu/,YES,Auraria Campus/Higher Education,None,1380 Lawrence St.,None,None
+303-892-1436,Denver,80204.0,http://www.firedenver.org/museum/,YES,Denver Firefighters Museum,None,1326 Tremont Pl.,None,None
+ , ,0.0, , ,Uptown Square,None, ,None,None
+303-640-2862,Denver,80204.0,http://www.denvergov.org/dephome.asp?depid=77,YES,Denver Performing Arts Complex,None,950 13th St.,None,None
+303-685-8143,Denver,80202.0,http://www.larimersquare.com/,YES,Larimer Square,None,1430 Larimer Square,None,None
+ ,Denver,0.0, , ,Legacy Tower,None,700 17th St.,None,None
+ ,Denver,80202.0, ,YES,Sakura Square,None,1255 19th St.,None,None
+720-913-4900,Denver,80202.0,http://www.denvergov.org/,YES,Denver City and County Building,None,1435 Bannock St.,None,None
+720-865-1111,Denver,80204.0,http://www.denver.lib.co.us/,YES,Denver Public Library,None,10 W. 14th Ave. Parkway,None,None
+ ,Denver,0.0, , ,First Interstate Tower North,None,633 17th St.,None,None
+ ,Denver,0.0, , ,Denver Place,None, ,None,None
+ ,Denver,0.0, , ,Embassy Suites,None,1881 Curtis St.,None,None
+ ,Denver,0.0, , ,1875 Lawrence,None,1875 Lawrence St.,None,None
+ ,Denver,0.0, , ,Trinity Place,None,1801 Broadway,None,None
+ ,Denver,0.0, , ,Qwest Tower,None, ,None,None
+ ,Denver,0.0, , ,Wells Fargo Tower,None,621 17th St.,None,None
+ ,Denver,0.0, , ,Writer Square Tower,None, ,None,None
+ ,Denver,0.0, , ,Denver Club Building,None,518 17th St,None,None
+ ,Denver,0.0, , ,1801 California,None,1801 California St.,None,None
+303-595-4386,Denver,80204.0,http://www.sixflags.com/elitchgardens,YES,Six Flags Elitch Gardens,None,2000 Elitches Cir.,None,None
+303-360-5360,Denver,0.0, , ,Wings Over the Rockies Air and Space Museum,None,7711 E. Academy Blvd. (Lowry Campus),None,None
+ ,Denver,0.0, , ,Wells Fargo Center,None,1700 Lincoln Ave.,None,None
+ ,Denver,0.0, , ,Denver Place Plaza Tower,None,1099 18th St.,None,None
+ , ,0.0, , ,Daniels and Fisher Tower,None,1101 16th St.,None,None
+ ,Denver,0.0, , ,Elephant Corral,None,1444 Wazee St.,None,None
+ ,Denver,0.0, , ,Alamo Plaza,None,1401 17th St.,None,None
+ ,Denver,0.0, , ,Republic Plaza,None,330 17th St.,None,None
+ ,Denver,0.0, , ,1670 Broadway,None,1670 Broadway,None,None
+ ,Denver,0.0, , ,US Bank Tower,None,950 17th St.,None,None
+ ,Denver,0.0, , ,Glenarm Plaza,None,1616 Glenarm Pl.,None,None
+ ,Denver,0.0, , ,Dominion Plaza,None,600 17th St.,None,None
+ ,Denver,0.0, , ,Independence Plaza,None,1050 17th St.,None,None
+ ,Denver,0.0, , ,Hudson's Bay Centre,None,1600 Stout St.,None,None
+ ,Denver,0.0, , ,Lawrence Center,None, ,None,None
+ ,Denver,0.0, , ,Public Service Building,None,550 15th St.,None,None
+ ,Denver,0.0, ,YES,University Building,None,910 16th St.,None,None
+ ,Denver,0.0, , ,The Chamber Building,None,1445 Market St.,None,None
+303-628-5578,Denver,0.0, , ,Oxford Executive Suites,None,1616 17th St.,None,None
+ ,Denver,0.0, , ,16 Market Square,None, ,None,None
+ ,Denver,0.0, , ,JP Plaza,None,1601 Blake St.,None,None
+303-571-1114,Denver,0.0, , ,Courtyard by Marriott,None,934 16th St.,None,None
+ ,Denver,0.0, , ,Uptown Neighborhood,None, ,None,None
+ ,Denver,0.0, , ,Capitol Hill Neighborhood,None, ,None,None
+ ,Denver,0.0, , ,Highland Neighborhood,None, ,None,None
+ ,Denver,0.0, , ,Prospect Neighborhood,None, ,None,None
+ ,Denver,0.0, , ,City of Cuenavaca Park,None, ,None,None
+ ,Denver,0.0, , ,Ball Park Neighborhood,None, ,None,None
+ ,Denver,0.0, , ,Curtis Park Neighborhood,None, ,None,None
+ ,Denver,0.0, , ,Confluence Park,None, ,None,None
+ ,Denver,0.0, , ,Commons Park,None, ,None,None
+ ,Denver,0.0, , ,Golden Triangle Neighborhood,None, ,None,None
+ ,Denver,0.0, , ,Guaranty Bank Building,None,805 17th St.,None,None
+ ,Denver,0.0, , ,18th Street Atrium,None, ,None,None
+ ,Denver,80202.0, ,YES,Wellington E. Webb Municipal Office Building,None,201 W. Colfax Ave.,None,None
+None,Denver,80216.0,None,None,Forney Museum of Transportation,None,4303 Brighton Blvd.,None,None
+ ,Denver,0.0, , ,Johns Manville Plaza,None,717 17th St.,None,None
+ ,Denver,0.0, , ,Park Central,None, ,None,None
+ ,Denver,0.0, , ,Market Center,None, ,None,None
+ ,Denver,0.0, , ,Jefferson Park Neighborhood,None, ,None,None
+303-292-2566,Denver,0.0, , ,Black American West Museum and Heritage Center,None,3091 California St.,None,None
+303-297-3111,Denver,80202.0,http://www.brownpalace.com/, ,Brown Palace Hotel,None,321 17th St.,None,None
+303-620-4933,Denver,80204.0,http://www.coloradohistory.org/,YES,Byers-Evans House,None,1310 Bannock St.,None,None
+303-866-3682,Denver,0.0, ,YES,Colorado Historical Society and Museum,None,1300 Broadway,None,None
+303-292-0200,Denver,80205.0,http://www.coloradorockies.com/index.html,YES,Coors Field,None,2001 Blake St.,None,None
+720-865-3500,Denver,80206.0,http://www.botanicgardens.org/, ,Denver Botanic Gardens,None,1005 York St.,None,None
+303-595-3800,Denver,80204.0, , ,Denver Civic Theater,None,721 Santa Fe Dr.,None,None
+303-288-8000,Denver,80202.0,http://www.denverconvention.com/,YES,Denver Convention Complex,None,700 14th St.,None,None
+303-436-6000,Denver,80204.0,http://www.denverhealth.org, ,Denver Health Medical Center,None,777 Bannock St.,None,None
+ ,Denver,0.0, , ,Denver Post Tower,None,1560 Broadway,None,None
