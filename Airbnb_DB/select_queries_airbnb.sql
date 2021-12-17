@@ -5,8 +5,6 @@ use airbnb_database;
 -- ALONG WITH THESE QUERIES, THERE WILL BE A 1 - 2 SENTENCE DESCRIBING THE QUERY
 -- --------------------------------------------------------------------------------------------------------
 
-
-
 -- --------------------------------------------------------------------------------------------------------
 -- SELECT QUERIES (BEGIN: ANGEL)
 -- --------------------------------------------------------------------------------------------------------
@@ -83,7 +81,7 @@ WITH best_prices AS
 -- SELECT STATEMENT 1 -- Basic
 -- Business Question: Investor wants to know which properties have air condition and a pool
 Select PropertyID
-From amenities 
+From amenities_table
 WHERE AirConditioning = 'True' and Pool = 'True';
 
 -- SELECT STATEMENT 2 -- Basic
@@ -259,9 +257,6 @@ BEGIN
 	RETURN (poi_rating);
 END //
 DELIMITER ;
-
-
-
 
 -- --------------------------------------------------------------------------------------------------------
 -- STORED PROCEDURE
